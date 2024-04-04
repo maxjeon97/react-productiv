@@ -18,8 +18,6 @@ import TodoForm from "./TodoForm";
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
 
-  console.log("Got here! Todo:", todo);
-
   const currentValues =
   {
     title: todo.title,

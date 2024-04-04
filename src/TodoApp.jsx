@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import {v4 as uuid} from "uuid";
+import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 import TopTodo from "./TopTodo";
 import EditableTodoList from "./EditableTodoList";
+import TodoForm from "./TodoForm";
 
 /** App for managing a todo list.
  *
@@ -15,33 +16,44 @@ import EditableTodoList from "./EditableTodoList";
  * App -> TodoApp -> { TodoForm, EditableTodoList }
  */
 
-function TodoApp({initialTodos}) {
+function TodoApp({ initialTodos }) {
   const [todos, setTodos] = useState(initialTodos);
 
+  const initialFormData =
+  {
+    title: "",
+    description: "",
+    priority: 1,
+  };
+
   /** add a new todo to list */
-  function create(newTodo) {
-    const newTodoData = {...newTodo, id: uuid()};
-    setTodos((todos) => [...todos, newTodoData]);
+  function create(formData) {
+    const newTodo = { ...formData, id: uuid() };
+    setTodos((todos) => [...todos, newTodo]);
   }
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
-    const {id} = updatedTodo;
+    const { id } = updatedTodo;
 
-    setTodos(todos.map((td) => (td.id === id ? {...updatedTodo} : td)));
+    setTodos(todos.map((todo) => (todo.id === id ? { ...updatedTodo } : todo)));
   }
 
   /** delete a todo by id */
   function remove(id) {
-    setTodos(todos.filter((td) => td.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
+
 
   return (
     <main className="TodoApp">
       <div className="row">
         <div className="col-md-6">
           {todos.length !== 0 ? (
-            <EditableTodoList />
+            <EditableTodoList
+              todos={todos}
+              update={update}
+              remove={remove} />
           ) : (
             <span className="text-muted">You have no todos.</span>
           )}
@@ -56,7 +68,9 @@ function TodoApp({initialTodos}) {
           )}
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            FIXME
+            <TodoForm
+            initialFormData={initialFormData}
+            handleSave={create}/>
           </section>
         </div>
       </div>

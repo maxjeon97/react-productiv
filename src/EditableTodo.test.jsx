@@ -1,8 +1,9 @@
-import { describe, test, expect } from "vitest";
+import { describe, test, expect, vi } from "vitest";
 
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import EditableTodo from "./EditableTodo";
+
 
 const testTodo =
 {
@@ -38,5 +39,19 @@ describe("EditableTodo component", function () {
 
         expect(result.container.querySelector(".NewTodoForm")).toBeInTheDocument();
         expect(result.container.querySelector(".Todo")).not.toBeInTheDocument();
+    });
+
+    const mockUpdate = vi.fn();
+    test("calls update when edit form is saved", function () {
+        const result = render(<EditableTodo todo={testTodo} update={mockUpdate} />);
+        const editBtn = result.container.querySelector(".EditableTodo-toggle");
+        fireEvent.click(editBtn);
+
+        expect(result.container.querySelector(".NewTodoForm")).toBeInTheDocument();
+        expect(result.container.querySelector(".Todo")).not.toBeInTheDocument();
+
+        const submitBtn = result.container.querySelector(".NewTodoForm-addBtn");
+        fireEvent.click(submitBtn);
+        expect(mockUpdate).toHaveBeenCalledTimes(1);
     });
 });

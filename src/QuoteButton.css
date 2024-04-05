@@ -1,0 +1,17 @@
+.QuoteButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 50%;
+}
+
+.QuoteButton-btn {
+  color: white;
+  background-color: rgb(150, 110, 8);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  border-color: rgb(193, 181, 166);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 0.8em;
+}

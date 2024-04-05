@@ -13,7 +13,7 @@ import TodoForm from "./TodoForm";
  * State:
  * - todos: array of [ todo, ... ]
  *
- * App -> TodoApp -> { TodoForm, EditableTodoList }
+ * App -> TodoApp -> { TodoForm, EditableTodoList, QuoteButton }
  */
 
 function TodoApp({ initialTodos }) {

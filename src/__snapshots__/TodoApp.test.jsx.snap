@@ -38,11 +38,12 @@ exports[`TodoApp component > matches snapshot 1`] = `
                 class="Todo"
                 id="1"
               >
-                <div>
+                <div
+                  class="Todo-title"
+                >
                   <b>
                     Test1
                   </b>
-                   
                   <small>
                     (priority: 
                     1
@@ -69,24 +70,29 @@ exports[`TodoApp component > matches snapshot 1`] = `
             Top Todo
           </h3>
           <div
-            class="Todo"
-            id="1"
+            class="TopTodo"
           >
-            <div>
-              <b>
-                Test1
-              </b>
-               
-              <small>
-                (priority: 
-                1
-                )
-              </small>
-            </div>
-            <div>
-              <small>
-                Test1 Descr
-              </small>
+            <div
+              class="Todo"
+              id="1"
+            >
+              <div
+                class="Todo-title"
+              >
+                <b>
+                  Test1
+                </b>
+                <small>
+                  (priority: 
+                  1
+                  )
+                </small>
+              </div>
+              <div>
+                <small>
+                  Test1 Descr
+                </small>
+              </div>
             </div>
           </div>
         </section>

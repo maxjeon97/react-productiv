@@ -20,6 +20,15 @@ exports[`productiv app > matches snapshot 1`] = `
           The best name in todo list management.
         </p>
       </div>
+      <div
+        class="QuoteButton"
+      >
+        <button
+          class="QuoteButton-btn"
+        >
+          Click here for an inspirational quote!
+        </button>
+      </div>
     </header>
     <section
       class="container mt-4"
@@ -60,11 +69,12 @@ exports[`productiv app > matches snapshot 1`] = `
                     class="Todo"
                     id="1"
                   >
-                    <div>
+                    <div
+                      class="Todo-title"
+                    >
                       <b>
                         Code!
                       </b>
-                       
                       <small>
                         (priority: 
                         2
@@ -103,11 +113,12 @@ exports[`productiv app > matches snapshot 1`] = `
                     class="Todo"
                     id="2"
                   >
-                    <div>
+                    <div
+                      class="Todo-title"
+                    >
                       <b>
                         Make dinner
                       </b>
-                       
                       <small>
                         (priority: 
                         1
@@ -146,11 +157,12 @@ exports[`productiv app > matches snapshot 1`] = `
                     class="Todo"
                     id="3"
                   >
-                    <div>
+                    <div
+                      class="Todo-title"
+                    >
                       <b>
                         Go to bed
                       </b>
-                       
                       <small>
                         (priority: 
                         3
@@ -177,24 +189,29 @@ exports[`productiv app > matches snapshot 1`] = `
                 Top Todo
               </h3>
               <div
-                class="Todo"
-                id="2"
+                class="TopTodo"
               >
-                <div>
-                  <b>
-                    Make dinner
-                  </b>
-                   
-                  <small>
-                    (priority: 
-                    1
-                    )
-                  </small>
-                </div>
-                <div>
-                  <small>
-                    Cook something healthy
-                  </small>
+                <div
+                  class="Todo"
+                  id="2"
+                >
+                  <div
+                    class="Todo-title"
+                  >
+                    <b>
+                      Make dinner
+                    </b>
+                    <small>
+                      (priority: 
+                      1
+                      )
+                    </small>
+                  </div>
+                  <div>
+                    <small>
+                      Cook something healthy
+                    </small>
+                  </div>
                 </div>
               </div>
             </section>

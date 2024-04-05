@@ -10,18 +10,21 @@ const testTodos = [
         title: "Test1",
         description: "Test1 Descr",
         priority: 1,
+        isDone: false,
     },
     {
         id: 2,
         title: "Test2",
         description: "Test2 Descr",
         priority: 2,
+        isDone: false,
     },
     {
         id: 3,
         title: "Test3",
         description: "Test3 Descr",
         priority: 3,
+        isDone: false,
     },
 ];
 

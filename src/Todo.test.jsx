@@ -10,6 +10,7 @@ const testTodo =
     title: "Test1",
     description: "Test1 Descr",
     priority: 1,
+    isDone: false,
 };
 
 describe("Todo component", function () {

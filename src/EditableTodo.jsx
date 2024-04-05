@@ -40,7 +40,7 @@ function EditableTodo({ todo, update, remove, handleTitleClick }) {
   function handleSave(formData) {
     setIsEditing(false);
 
-    const updatedTodo = { ...formData, id: todo.id };
+    const updatedTodo = { ...formData, id: todo.id, isDone: todo.isDone };
     update(updatedTodo);
   }
 

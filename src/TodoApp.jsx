@@ -19,13 +19,6 @@ import TodoForm from "./TodoForm";
 function TodoApp({ initialTodos }) {
   const [todos, setTodos] = useState(initialTodos);
 
-  const initialFormData =
-  {
-    title: "",
-    description: "",
-    priority: 1,
-  };
-
   /** add a new todo to list */
   function create(formData) {
     const newTodo = { ...formData, id: uuid() };
@@ -65,7 +58,6 @@ function TodoApp({ initialTodos }) {
           <section>
             <h3 className="mb-3">Add Nü</h3>
             <TodoForm
-              initialFormData={initialFormData}
               handleSave={create} />
           </section>
         </div>

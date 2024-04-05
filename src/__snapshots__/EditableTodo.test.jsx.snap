@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EditableTodo component > matches snapshot 1`] = `
+<div>
+  <div
+    class="EditableTodo"
+  >
+    <div
+      class="mb-3"
+    >
+      <div
+        class="float-end text-sm-end"
+      >
+        <button
+          class="EditableTodo-toggle btn-link btn btn-sm"
+        >
+          Edit
+        </button>
+        <button
+          class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+        >
+          Del
+        </button>
+      </div>
+      <div
+        class="Todo"
+        id="1"
+      >
+        <div>
+          <b>
+            Test1
+          </b>
+           
+          <small>
+            (priority: 
+            1
+            )
+          </small>
+        </div>
+        <div>
+          <small>
+            Test1 Descr
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -2,20 +2,43 @@ import { describe, test, expect } from "vitest";
 
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
+import TopTodo from "./TopTodo";
 
-// describe("productiv app", function () {
-//     test("renders without crashing", function () {
-//         render(<App />);
-//     });
+const testTodos = [
+    {
+        id: 1,
+        title: "Test1",
+        description: "Test1 Descr",
+        priority: 1,
+    },
+    {
+        id: 2,
+        title: "Test2",
+        description: "Test2 Descr",
+        priority: 2,
+    },
+    {
+        id: 3,
+        title: "Test3",
+        description: "Test3 Descr",
+        priority: 3,
+    },
+];
 
-//     test("contains expected title", function () {
-//         const result = render(<App />);
-//         expect(result.queryByText("Prøductïv")).toBeInTheDocument();
-//     });
+describe("TopTodo component", function () {
+    test("renders without crashing", function () {
+        render(<TopTodo todos={testTodos}/>);
+    });
 
-//     test("rendered quotes app", function () {
-//         const result = render(<App />);
-//         expect(result.queryByText("Click here for an inspirational quøte!")).toBeInTheDocument();
-//     });
-// });
+    test('matches snapshot', function () {
+        const { container } = render(<TopTodo todos={testTodos}/>);
+        expect(container).toMatchSnapshot();
+    });
+
+    test("renders the correct todo (highest priority)", function () {
+        const result = render(<TopTodo todos={testTodos}/>);
+        expect(result.queryByText("Test1")).toBeInTheDocument();
+        expect(result.queryByText("Test2")).not.toBeInTheDocument();
+        expect(result.queryByText("Test3")).not.toBeInTheDocument();
+    });
+});

@@ -15,7 +15,7 @@ function TopTodo({ todos }) {
   const uncompletedTodos = todos.filter(todo => todo.isDone === false);
 
   let top = uncompletedTodos.reduce(
-    (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
+    (acc, cur) => cur.priority < acc.priority ? cur : acc, uncompletedTodos[0]);
 
   return (
     <div className="TopTodo">

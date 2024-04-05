@@ -1,0 +1,7 @@
+.Todo-done {
+  text-decoration: line-through;
+}
+
+.Todo-title {
+  cursor: pointer;
+}

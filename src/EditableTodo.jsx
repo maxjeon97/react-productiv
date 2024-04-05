@@ -8,6 +8,7 @@ import TodoForm from "./TodoForm";
  * - todo
  * - update(): fn to call to update a todo
  * - remove(): fn to call to remove a todo
+ * - handleTitleClick(): fn to toggle isDone property of Todo
  *
  * State
  * - isEditing
@@ -15,7 +16,7 @@ import TodoForm from "./TodoForm";
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
 
-function EditableTodo({ todo, update, remove }) {
+function EditableTodo({ todo, update, remove, handleTitleClick }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const currentValues =
@@ -64,7 +65,7 @@ function EditableTodo({ todo, update, remove }) {
               Del
             </button>
           </div>
-          <Todo todo={todo} />
+          <Todo todo={todo} handleTitleClick={handleTitleClick} />
         </div>
       }
     </div>

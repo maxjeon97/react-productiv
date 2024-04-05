@@ -19,9 +19,14 @@ import TodoForm from "./TodoForm";
 function TodoApp({ initialTodos }) {
   const [todos, setTodos] = useState(initialTodos);
 
+  /** when title is clicked, toggle Todo isDone property */
+  function handleTitleClick(id) {
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)));
+  }
+
   /** add a new todo to list */
   function create(formData) {
-    const newTodo = { ...formData, id: uuid() };
+    const newTodo = { ...formData, id: uuid(), isDone: false };
     setTodos((todos) => [...todos, newTodo]);
   }
 
@@ -44,6 +49,7 @@ function TodoApp({ initialTodos }) {
           {todos.length !== 0
             ? <EditableTodoList
               todos={todos}
+              handleTitleClick={handleTitleClick}
               update={update}
               remove={remove} />
             : <span className="text-muted">You have no todos.</span>}

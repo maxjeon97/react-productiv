@@ -1,6 +1,6 @@
 import React from "react";
-
 import Todo from "./Todo";
+import "./TopTodo.css";
 
 /** Shows the top todo.
  *
@@ -12,10 +12,16 @@ import Todo from "./Todo";
 
 function TopTodo({ todos }) {
   // lowest-priority # is the highest priority
-  let top = todos.reduce(
-      (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
+  const uncompletedTodos = todos.filter(todo => todo.isDone === false);
 
-  return <Todo todo={top} />;
+  let top = uncompletedTodos.reduce(
+    (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
+
+  return (
+    <div className="TopTodo">
+      <Todo todo={top} />
+    </div>
+  );
 }
 
 export default TopTodo;

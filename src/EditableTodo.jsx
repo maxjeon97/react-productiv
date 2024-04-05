@@ -38,7 +38,7 @@ function EditableTodo({ todo, update, remove, handleTitleClick }) {
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
-    setIsEditing(!isEditing);
+    setIsEditing(false);
 
     const updatedTodo = { ...formData, id: todo.id };
     update(updatedTodo);
